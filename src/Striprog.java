@@ -6,7 +6,7 @@ import java.util.Set;
 public class Striprog {
 
 	public static void main(String[] args) {
-		String s = "ppla";
+		String s = "brrittesh";
 		char[] ca = s.toCharArray();
 		HashMap<Character, Integer> map = new LinkedHashMap<Character, Integer>();
 		for (int i = 0; i < ca.length; i++) {

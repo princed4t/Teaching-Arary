@@ -1,27 +1,21 @@
 package com.programme;
 
 import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Duplicateusingsset {
 
 	public static void main(String[] args) {
+		StringBuilder sb1=new StringBuilder();
 		String st="applwewe";
-		StringBuilder sb=new StringBuilder();
-		Set<Character>set=new LinkedHashSet<>();
-		
-		for(int i=0;i<st.length();i++){
-			set.add(st.charAt(i));
-			
-			
-		}
-		for(char ch:set) {
-			sb.append(ch);
-		}
-		System.out.println(sb);
-		
-		
-
+		Map<Character, Long> collect = st.chars().mapToObj(i->(char)i)
+		.collect(Collectors.groupingBy(i->i,Collectors.counting()));
+	List<Character> collect2 = collect.keySet().stream().filter(i->collect.get(i)>1).map(i->i).collect(Collectors.toList());
+	collect2.forEach(i->System.out.print(i));
+	
 	}
 
 }
